@@ -1,0 +1,12 @@
+C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryB\KDG\bin\Debug\KDG.dll
+C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryB\KDG\bin\Debug\KDG.pdb
+C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryB\KDG\bin\Debug\KDG.dll.manifest
+C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryB\KDG\bin\Debug\KDG.vsto
+C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryB\KDG\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryB\KDG\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.xml
+C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryB\KDG\obj\Debug\KDG.csprojResolveAssemblyReference.cache
+C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryB\KDG\obj\Debug\KDG.Properties.Resources.resources
+C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryB\KDG\obj\Debug\KDG.RibbonKdg.resources
+C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryB\KDG\obj\Debug\KDG.csproj.GenerateResource.Cache
+C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryB\KDG\obj\Debug\KDG.dll
+C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryB\KDG\obj\Debug\KDG.pdb
