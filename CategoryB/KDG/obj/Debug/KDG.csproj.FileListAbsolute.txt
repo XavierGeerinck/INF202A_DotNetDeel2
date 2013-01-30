@@ -10,3 +10,14 @@ C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryB\KDG\
 C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryB\KDG\obj\Debug\KDG.csproj.GenerateResource.Cache
 C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryB\KDG\obj\Debug\KDG.dll
 C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryB\KDG\obj\Debug\KDG.pdb
+C:\Projectendotnet\CategoryB\KDG\bin\Debug\KDG.dll
+C:\Projectendotnet\CategoryB\KDG\bin\Debug\KDG.pdb
+C:\Projectendotnet\CategoryB\KDG\bin\Debug\KDG.dll.manifest
+C:\Projectendotnet\CategoryB\KDG\bin\Debug\KDG.vsto
+C:\Projectendotnet\CategoryB\KDG\obj\Debug\ResolveAssemblyReference.cache
+C:\Projectendotnet\CategoryB\KDG\obj\Debug\KDG.Properties.Resources.resources
+C:\Projectendotnet\CategoryB\KDG\obj\Debug\KDG.RibbonKdg.resources
+C:\Projectendotnet\CategoryB\KDG\obj\Debug\GenerateResource.read.1.tlog
+C:\Projectendotnet\CategoryB\KDG\obj\Debug\GenerateResource.write.1.tlog
+C:\Projectendotnet\CategoryB\KDG\obj\Debug\KDG.dll
+C:\Projectendotnet\CategoryB\KDG\obj\Debug\KDG.pdb
