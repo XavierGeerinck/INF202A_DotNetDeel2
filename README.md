@@ -14,3 +14,4 @@ References
  *  ... 
 
  * API: http://nl.wikipedia.org/wiki/Application_programming_interface
+ * Architecture: http://msdn.microsoft.com/nl-be/library/bb386298.aspx
