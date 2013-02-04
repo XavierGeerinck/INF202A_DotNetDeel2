@@ -34,49 +34,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tab1 = this.Factory.CreateRibbonTab();
-            this.group1 = this.Factory.CreateRibbonGroup();
-            this.RIBNrowFiller = this.Factory.CreateRibbonButton();
-            this.tab1.SuspendLayout();
-            this.group1.SuspendLayout();
-            // 
-            // tab1
-            // 
-            this.tab1.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
-            this.tab1.Groups.Add(this.group1);
-            this.tab1.Label = "TabAddIns";
-            this.tab1.Name = "tab1";
-            // 
-            // group1
-            // 
-            this.group1.Items.Add(this.RIBNrowFiller);
-            this.group1.Label = "Tools";
-            this.group1.Name = "group1";
-            // 
-            // RIBNrowFiller
-            // 
-            this.RIBNrowFiller.Label = "RowFiller";
-            this.RIBNrowFiller.Name = "RIBNrowFiller";
-            this.RIBNrowFiller.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.RIBNrowFiller_Click);
-            // 
-            // RibbonKdg
-            // 
-            this.Name = "RibbonKdg";
-            this.RibbonType = "Microsoft.Excel.Workbook";
-            this.Tabs.Add(this.tab1);
-            this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.RibbonKdg_Load);
-            this.tab1.ResumeLayout(false);
-            this.tab1.PerformLayout();
-            this.group1.ResumeLayout(false);
-            this.group1.PerformLayout();
+      this.tab1 = this.Factory.CreateRibbonTab();
+      this.MinMax = this.Factory.CreateRibbonGroup();
+      this.btnMinMax = this.Factory.CreateRibbonButton();
+      this.tab1.SuspendLayout();
+      this.MinMax.SuspendLayout();
+      // 
+      // tab1
+      // 
+      this.tab1.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
+      this.tab1.Groups.Add(this.MinMax);
+      this.tab1.Label = "TabAddIns";
+      this.tab1.Name = "tab1";
+      // 
+      // MinMax
+      // 
+      this.MinMax.Items.Add(this.btnMinMax);
+      this.MinMax.Label = "Numbers";
+      this.MinMax.Name = "MinMax";
+      // 
+      // btnMinMax
+      // 
+      this.btnMinMax.Label = "Min - Max";
+      this.btnMinMax.Name = "btnMinMax";
+      this.btnMinMax.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnMinMax_Click);
+      // 
+      // RibbonKdg
+      // 
+      this.Name = "RibbonKdg";
+      this.RibbonType = "Microsoft.Excel.Workbook";
+      this.Tabs.Add(this.tab1);
+      this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.RibbonKdg_Load);
+      this.tab1.ResumeLayout(false);
+      this.tab1.PerformLayout();
+      this.MinMax.ResumeLayout(false);
+      this.MinMax.PerformLayout();
 
         }
 
         #endregion
 
         internal Microsoft.Office.Tools.Ribbon.RibbonTab tab1;
-        internal Microsoft.Office.Tools.Ribbon.RibbonGroup group1;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton RIBNrowFiller;
+        //internal Microsoft.Office.Tools.Ribbon.RibbonDropDown drdColor;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup MinMax;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnMinMax;
     }
 
     partial class ThisRibbonCollection
