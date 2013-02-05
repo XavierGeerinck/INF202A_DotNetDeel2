@@ -17,3 +17,4 @@ C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryC\Clie
 C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryC\Client\obj\x86\Debug\Client.exe
 C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryC\Client\obj\x86\Debug\Client.pdb
 >>>>>>> 0c35f6e6ee5ebeb2afefe298601b4a779142f049
+C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryC\Client\obj\x86\Debug\Client.Client.resources

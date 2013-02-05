@@ -21,9 +21,11 @@ namespace Server
         public ListenerSocket()
         {
             logger = new Logger();
-            ipAddress = System.Net.Dns.GetHostEntry(Environment.MachineName).AddressList[0];
+            ipAddress = GetExternalIp();
+
+            IPAddress temp = IPAddress.Parse("10.132.100.34");
             
-            listenerSocket = new TcpListener(ipAddress, ListeningPort);
+            listenerSocket = new TcpListener(temp, ListeningPort);
             logger.ShowMessage("Listener initialized.");
 
             startListening();
@@ -32,7 +34,7 @@ namespace Server
         public void startListening()
         {
             listenThread = new Thread(new ThreadStart(ListenForClients));
-            logger.ShowMessage("Listening on: " + GetExternalIp() + ":" + ListeningPort);
+            logger.ShowMessage("Listening on: " + ipAddress + ":" + ListeningPort);
             ListenForClients();
         }
 
