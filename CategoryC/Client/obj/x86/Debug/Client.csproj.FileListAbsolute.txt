@@ -1,0 +1,9 @@
+C:\Projectendotnet\CategoryC\Client\bin\Debug\Client.exe
+C:\Projectendotnet\CategoryC\Client\bin\Debug\Client.pdb
+C:\Projectendotnet\CategoryC\Client\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Projectendotnet\CategoryC\Client\obj\x86\Debug\Client.Client.resources
+C:\Projectendotnet\CategoryC\Client\obj\x86\Debug\Client.Properties.Resources.resources
+C:\Projectendotnet\CategoryC\Client\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Projectendotnet\CategoryC\Client\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Projectendotnet\CategoryC\Client\obj\x86\Debug\Client.exe
+C:\Projectendotnet\CategoryC\Client\obj\x86\Debug\Client.pdb
