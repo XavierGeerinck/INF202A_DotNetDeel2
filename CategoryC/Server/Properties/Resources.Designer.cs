@@ -63,9 +63,9 @@ namespace Server.Properties {
         /// <summary>
         ///   Looks up a localized string similar to 0.0.0.0.
         /// </summary>
-        internal static string ListeningAdress {
+        internal static string ListeningAddress {
             get {
-                return ResourceManager.GetString("ListeningAdress", resourceCulture);
+                return ResourceManager.GetString("ListeningAddress", resourceCulture);
             }
         }
         

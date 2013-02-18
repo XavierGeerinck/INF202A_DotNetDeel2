@@ -17,50 +17,64 @@ namespace Server
         private TcpListener listenerSocket;
         private Thread listenThread;
         private Logger logger;
+        private MessageHandler messageHandler;
+        private const string opcodeDelimiter = "|";
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public ListenerSocket()
         {
             ListeningPort = int.Parse(Server.Properties.Resources.PortNumber);
-            IPAddress temp = IPAddress.Parse(Server.Properties.Resources.ListeningAdress);
+            IPAddress ipAddressToListenOn = IPAddress.Parse(Server.Properties.Resources.ListeningAddress);
 
             logger = new Logger();
             ipAddress = GetExternalIp();
-            
-            listenerSocket = new TcpListener(temp, ListeningPort);
-            logger.ShowMessage("Listener initialized.");
+            messageHandler = new MessageHandler();
 
-            startListening();
-        }
-
-        public void startListening()
-        {
+            // Make the socket listener and thread
+            listenerSocket = new TcpListener(ipAddressToListenOn, ListeningPort);
             listenThread = new Thread(new ThreadStart(ListenForClients));
-            logger.ShowMessage("Listening on: " + ipAddress + ":" + ListeningPort);
-            ListenForClients();
+            listenThread.Start();
         }
 
+        /// <summary>
+        /// Listen for incoming clients and add them to a new thread so we can accept data.
+        /// </summary>
         private void ListenForClients()
         {
+            logger.ShowMessage("Listener initialized.");
+
+            // Start the socket.
             listenerSocket.Start();
+
+            logger.ShowMessage("Listening on: " + ipAddress + ":" + ListeningPort);
             logger.ShowMessage("Waiting for clients.");
 
+            // Loop on connections
             while (true)
             {
                 // Block everything until the client has connected
                 TcpClient client = listenerSocket.AcceptTcpClient();
 
-                // Create thread to handle connection
+                logger.ShowMessage(String.Format("Incoming connection on {0}", client.Client.RemoteEndPoint));
+
+                // Create thread to handle connection, this won't be reached untill we got a connection.
                 Thread clientThread = new Thread(new ParameterizedThreadStart(HandleClientComm));
-                clientThread.Start();
+                clientThread.Start(client);
             }
         }
 
+        /// <summary>
+        /// Handle the clients sending data.
+        /// </summary>
+        /// <param name="client"></param>
         private void HandleClientComm(object client)
         {
             TcpClient tcpClient = (TcpClient)client;
             NetworkStream clientStream = tcpClient.GetStream();
 
-            logger.ShowMessage("Client connected, waiting for data.");
+            logger.ShowMessage(String.Format("Client connected on {0}, waiting for data.", tcpClient.Client.RemoteEndPoint));
 
             byte[] message = new byte[4096];
             int bytesRead;
@@ -74,10 +88,11 @@ namespace Server
                     // Blocks until client sends a message
                     bytesRead = clientStream.Read(message, 0, 4096);
                 }
-                catch (Exception e)
+                catch
                 {
                     // Socket error occurred
-                    logger.ShowMessage(e.ToString(), LogType.ERROR);
+                    //logger.ShowMessage(e.ToString(), LogType.ERROR);
+                    logger.ShowMessage("Could not read data from the client.", LogType.ERROR);
                     break;
                 }
 
@@ -92,10 +107,15 @@ namespace Server
                 ASCIIEncoding encoder = new ASCIIEncoding();
                 String receivedMessage = encoder.GetString(message, 0, bytesRead);
 
-                logger.ShowMessage(receivedMessage);
+                MessageHandler.HandleMessage(receivedMessage, opcodeDelimiter);
+                //logger.ShowMessage(receivedMessage);
             }
         }
 
+        /// <summary>
+        /// Method to get our external IP.
+        /// </summary>
+        /// <returns></returns>
         public IPAddress GetExternalIp()
         {
             // Variables, like the website and the regex to get the IP
