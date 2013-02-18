@@ -23,7 +23,7 @@ namespace Server
             logger = new Logger();
             ipAddress = GetExternalIp();
 
-            IPAddress temp = IPAddress.Parse("10.132.100.34");
+            IPAddress temp = IPAddress.Parse("127.0.0.1");
             
             listenerSocket = new TcpListener(temp, ListeningPort);
             logger.ShowMessage("Listener initialized.");

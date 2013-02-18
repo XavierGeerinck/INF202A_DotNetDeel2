@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-C:\Projectendotnet\CategoryC\Server\bin\Debug\Server.exe
-C:\Projectendotnet\CategoryC\Server\bin\Debug\Server.pdb
-C:\Projectendotnet\CategoryC\Server\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Projectendotnet\CategoryC\Server\obj\x86\Debug\Server.exe
-C:\Projectendotnet\CategoryC\Server\obj\x86\Debug\Server.pdb
-=======
 C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryC\Server\bin\Debug\Server.exe
 C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryC\Server\bin\Debug\Server.pdb
 C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryC\Server\obj\x86\Debug\Server.exe
 C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryC\Server\obj\x86\Debug\Server.pdb
->>>>>>> 0c35f6e6ee5ebeb2afefe298601b4a779142f049
