@@ -12,7 +12,7 @@ namespace Server
 {
     class ListenerSocket
     {
-        private const int ListeningPort = 8888;
+        private int ListeningPort;
         private IPAddress ipAddress;
         private TcpListener listenerSocket;
         private Thread listenThread;
@@ -20,10 +20,11 @@ namespace Server
 
         public ListenerSocket()
         {
+            ListeningPort = int.Parse(Server.Properties.Resources.PortNumber);
+            IPAddress temp = IPAddress.Parse(Server.Properties.Resources.ListeningAdress);
+
             logger = new Logger();
             ipAddress = GetExternalIp();
-
-            IPAddress temp = IPAddress.Parse("127.0.0.1");
             
             listenerSocket = new TcpListener(temp, ListeningPort);
             logger.ShowMessage("Listener initialized.");
