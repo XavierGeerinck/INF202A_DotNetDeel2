@@ -103,8 +103,23 @@ namespace Server
                 opcode.opcode = (ClientMessage)message[0];
                 opcode.data = message.Where(b => b != message[0]).ToArray();
 
+                
+                
+                // Pack the byte array
+                byte[] data = new byte[bytesRead];
+                Buffer.BlockCopy(opcode.data, 0, data, 0, bytesRead);
+
+                // DEBUG
+                string showBitStream = "";
+                foreach (byte receivedByte in data)
+                {
+                    showBitStream += Convert.ToString(receivedByte, 2).PadLeft(8, '0');
+                }
+                Logger.ShowMessage(showBitStream);
+                // DEBUG.END
+
                 // Let the packetmanager invoke the correct handler
-                PacketManager.InvokeHandler(opcode.opcode, opcode.data);
+                PacketManager.InvokeHandler(opcode.opcode, data);
             }
         }
     }

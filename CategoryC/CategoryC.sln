@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{A396C5AA-A0A3-46FD-9F0A-C479C77F4FF4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{527A536D-216B-4C8A-8703-78B7493A689D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,16 @@ Global
 		{A396C5AA-A0A3-46FD-9F0A-C479C77F4FF4}.Release|Mixed Platforms.Build.0 = Release|x86
 		{A396C5AA-A0A3-46FD-9F0A-C479C77F4FF4}.Release|x86.ActiveCfg = Release|x86
 		{A396C5AA-A0A3-46FD-9F0A-C479C77F4FF4}.Release|x86.Build.0 = Release|x86
+		{527A536D-216B-4C8A-8703-78B7493A689D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{527A536D-216B-4C8A-8703-78B7493A689D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{527A536D-216B-4C8A-8703-78B7493A689D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{527A536D-216B-4C8A-8703-78B7493A689D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{527A536D-216B-4C8A-8703-78B7493A689D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{527A536D-216B-4C8A-8703-78B7493A689D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{527A536D-216B-4C8A-8703-78B7493A689D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{527A536D-216B-4C8A-8703-78B7493A689D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{527A536D-216B-4C8A-8703-78B7493A689D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{527A536D-216B-4C8A-8703-78B7493A689D}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
