@@ -4,3 +4,4 @@ C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryC\Serv
 C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryC\Server\obj\x86\Debug\Server.pdb
 C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryC\Server\obj\x86\Debug\Server.Properties.Resources.resources
 C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryC\Server\obj\x86\Debug\Server.csproj.GenerateResource.Cache
+C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryC\Server\bin\Debug\Server.exe.config

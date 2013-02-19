@@ -2,23 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Server.Opcodes;
 
 namespace Server
 {
     class MessageHandler
     {
-        public static void HandleMessage(string receivedMessage, string delimiter)
+        [Opcode(ClientMessage.SMSG_BROADCAST)]
+        public static void handleBroadcast(byte[] data)
         {
-            // Messages comes in like : INFO|data
-            string[] message = receivedMessage.Split(delimiter.ToCharArray());
-            
-            // Opcode
-            byte opcode = byte.Parse(message[0]);
-
-            // Message
-            string data = message[1];
-
-            // Find the correct annotation and Invoke it.
+            // Data = String(Data)
+            ASCIIEncoding encoding = new ASCIIEncoding();
+            Logger.ShowMessage(encoding.GetString(data));
+            Logger.ShowMessage("SMSG_BROADCAST");
         }
     }
 }
