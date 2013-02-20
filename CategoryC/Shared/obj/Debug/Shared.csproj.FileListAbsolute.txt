@@ -1,0 +1,4 @@
+C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryC\Shared\bin\Debug\Shared.dll
+C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryC\Shared\bin\Debug\Shared.pdb
+C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryC\Shared\obj\Debug\Shared.dll
+C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryC\Shared\obj\Debug\Shared.pdb

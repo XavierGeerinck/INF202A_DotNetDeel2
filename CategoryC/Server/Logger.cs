@@ -11,9 +11,9 @@ namespace Server
         INFO    = 0x01
     }
 
-    class Logger
+    public class Logger
     {
-        public void ShowMessage(String message, LogType logType = LogType.INFO)
+        public static void ShowMessage(String message, LogType logType = LogType.INFO)
         {
             // Create the message
             StringBuilder sb = new StringBuilder();
@@ -37,7 +37,7 @@ namespace Server
             Console.ResetColor();
         }
 
-        public void SetColor(LogType logType = LogType.INFO)
+        public static void SetColor(LogType logType = LogType.INFO)
         {
             switch (logType)
             {
