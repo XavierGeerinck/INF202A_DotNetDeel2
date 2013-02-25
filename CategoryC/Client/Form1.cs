@@ -9,21 +9,23 @@ using System.Windows.Forms;
 
 using System.Net;
 using System.Net.Sockets;
-using Server.Opcodes;
+using Shared;
+using System.Threading;
+using Shared.Opcodes;
 
 namespace Client
 {
     public partial class Client : Form
     {
         private const int PortNumber = 8888;
-        private TcpClient ClientSocket;
         private ASCIIEncoding Encoder;
         DateTime TimeNow;
+        private ConnectionHandler connectionHandler;
 
         public Client()
         {
+            this.connectionHandler = new ConnectionHandler();
             InitializeComponent();
-            ClientSocket = new TcpClient();
             Encoder = new ASCIIEncoding();
         }
 
@@ -35,18 +37,7 @@ namespace Client
             }
             else
             {
-                ClientSocket.Connect(txtIp.Text, PortNumber);
-                if (ClientSocket.Connected)
-                {
-                    NetworkStream clientStream = ClientSocket.GetStream();
-
-                    byte[] s = Encoder.GetBytes("Hello Server!");
-
-                    clientStream.Write(s, 0, s.Length);
-                    clientStream.Flush();
-
-                    lblConnection.Text = "Server Connected";
-                }
+                connectionHandler.Connect(txtIp.Text, PortNumber);
             }
         }
 
@@ -81,15 +72,7 @@ namespace Client
 
             // CREATE
             byte[] message = Encoder.GetBytes(txtSend.Text);
-            byte[] appendedOpcode = new byte[message.Length + 1];
-            message.CopyTo(appendedOpcode, 1);
-            appendedOpcode[0] = (byte)ClientMessage.SMSG_BROADCAST;
-            message = appendedOpcode;
-
-            // SEND
-            NetworkStream clientStream = ClientSocket.GetStream();
-            clientStream.Write(message, 0, message.Count());
-            clientStream.Flush();
+            PacketHandler.sendPacket(connectionHandler.ServerSocket, ClientMessage.CMSG_BROADCAST, message);
             txtSend.ResetText();
         }
 

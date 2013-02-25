@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Server.Opcodes;
 using System.Reflection;
+using System.IO;
+using Server.Opcodes;
+using Shared.Opcodes;
 
 namespace Server.Handlers
 {

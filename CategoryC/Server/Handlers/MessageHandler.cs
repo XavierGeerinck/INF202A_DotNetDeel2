@@ -2,19 +2,31 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Net.Sockets;
 using Server.Opcodes;
+using System.IO;
+using Shared.Opcodes;
+using Shared;
 
 namespace Server
 {
     class MessageHandler
     {
-        [Opcode(ClientMessage.SMSG_BROADCAST)]
-        public static void handleBroadcast(byte[] data)
+        /// <summary>
+        /// The broadcast command is going to send the message that we receive to all the connected clients.
+        /// </summary>
+        /// <param name="data"></param>
+        [Opcode(ClientMessage.CMSG_BROADCAST)]
+        public static void HandleBroadcast(byte[] data)
         {
-            // Data = String(Data)
-            ASCIIEncoding encoding = new ASCIIEncoding();
-            Logger.ShowMessage(encoding.GetString(data));
-            Logger.ShowMessage("SMSG_BROADCAST");
+            foreach (TcpClient client in ListenerSocket.Clients)
+            {
+                PacketHandler.sendPacket(client, ClientMessage.SMSG_BROADCAST, data);
+            }
+            
+            //ASCIIEncoding encoding = new ASCIIEncoding();
+            //Logger.ShowMessage(encoding.GetString(data));
+            Logger.ShowMessage("CMSG_BROADCAST");
         }
     }
 }
