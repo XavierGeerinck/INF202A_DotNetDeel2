@@ -15,9 +15,11 @@ namespace Client
     {
         public TcpClient ServerSocket { get; set; }
         private MessageHandler messageHandler;
+        private Client mainForm;
 
-        public ConnectionHandler()
+        public ConnectionHandler(Client mainForm)
         {
+            this.mainForm = mainForm;
             ServerSocket = new TcpClient();
             messageHandler = new MessageHandler();
             PacketManager.DefineOpcodeHandlers();
@@ -80,7 +82,7 @@ namespace Client
                 // DEBUG.END
 
                 // Let the packetmanager invoke the correct handler
-                PacketManager.InvokeHandler(opcode.opcode, data);
+                PacketManager.InvokeHandler(ref mainForm, opcode.opcode, data);
             }
         }
     }

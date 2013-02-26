@@ -21,11 +21,16 @@ namespace Client
         private ASCIIEncoding Encoder;
         DateTime TimeNow;
         private ConnectionHandler connectionHandler;
+        public string AppendMessage
+        {
+            get { return txtMess.Text; }
+            set { txtMess.Text += value; }
+        }
 
         public Client()
         {
-            this.connectionHandler = new ConnectionHandler();
             InitializeComponent();
+            this.connectionHandler = new ConnectionHandler(this);
             Encoder = new ASCIIEncoding();
         }
 
