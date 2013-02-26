@@ -65,6 +65,10 @@ namespace Client
         private void btnSend_Click(object sender, EventArgs e)
         {
             // CREATE
+            AppendText(txtName.Text + ": ", Color.Blue);
+            AppendText(txtSend.Text, Color.Black);
+            txtMess.AppendText("\n");
+
             byte[] message = Encoder.GetBytes(txtName.Text + "|" + txtSend.Text);
             PacketHandler.sendPacket(connectionHandler.ServerSocket, ClientMessage.CMSG_BROADCAST, message);
             txtSend.ResetText();
@@ -78,8 +82,12 @@ namespace Client
             txtMess.SelectionColor = color;
             txtMess.AppendText(text);
             txtMess.SelectionColor = txtMess.ForeColor;
+        }
 
-           
+        private void Client_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            byte[] message = new byte[0];
+            PacketHandler.sendPacket(connectionHandler.ServerSocket, ClientMessage.CMSG_LOGOUT, message);
         }
     }
 }
