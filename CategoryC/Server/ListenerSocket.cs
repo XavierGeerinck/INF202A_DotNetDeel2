@@ -7,7 +7,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text.RegularExpressions;
 using System.Threading;
-using Server.Opcodes;
+using Shared.Opcodes;
 using Server.Handlers;
 
 namespace Server
@@ -19,6 +19,7 @@ namespace Server
         private Thread listenThread;
         private MessageHandler messageHandler;
         private const string opcodeDelimiter = "|";
+        public static List<TcpClient> Clients { get; set; }
 
         /// <summary>
         /// Constructor
@@ -28,6 +29,7 @@ namespace Server
             ListeningPort = int.Parse(Server.Properties.Resources.PortNumber);
             IPAddress ipAddressToListenOn = IPAddress.Parse(Server.Properties.Resources.ListeningAddress);
 
+            Clients = new List<TcpClient>();
             messageHandler = new MessageHandler();
 
             // Make the socket listener and thread
@@ -57,6 +59,9 @@ namespace Server
             {
                 // Block everything until the client has connected
                 TcpClient client = listenerSocket.AcceptTcpClient();
+
+                // Add the client to our list.
+                Clients.Add(client);
 
                 Logger.ShowMessage(String.Format("Incoming connection on {0}", client.Client.RemoteEndPoint));
 
@@ -103,8 +108,6 @@ namespace Server
                 opcode.opcode = (ClientMessage)message[0];
                 opcode.data = message.Where(b => b != message[0]).ToArray();
 
-                
-                
                 // Pack the byte array
                 byte[] data = new byte[bytesRead];
                 Buffer.BlockCopy(opcode.data, 0, data, 0, bytesRead);

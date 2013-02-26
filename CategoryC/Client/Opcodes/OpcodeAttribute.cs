@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Shared.Opcodes;
 
-namespace Server.Opcodes
+namespace Client.Opcodes
 {
     public class OpcodeAttribute : Attribute
     {

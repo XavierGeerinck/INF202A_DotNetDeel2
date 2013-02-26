@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Reflection;
 using System.IO;
-using Server.Opcodes;
 using Shared.Opcodes;
+using Client.Opcodes;
+using System.Windows.Forms;
 
-namespace Server.Handlers
+namespace Client.Handlers
 {
     public class PacketManager
     {
