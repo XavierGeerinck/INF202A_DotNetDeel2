@@ -8,3 +8,14 @@ C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryC\Clie
 C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryC\Client\bin\Debug\Shared.dll
 C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryC\Client\bin\Debug\Shared.pdb
 C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryC\Client\obj\x86\Debug\Client.csprojResolveAssemblyReference.cache
+C:\Projectendotnet\CategoryC\Client\bin\Debug\Client.exe
+C:\Projectendotnet\CategoryC\Client\bin\Debug\Client.pdb
+C:\Projectendotnet\CategoryC\Client\bin\Debug\Shared.dll
+C:\Projectendotnet\CategoryC\Client\bin\Debug\Shared.pdb
+C:\Projectendotnet\CategoryC\Client\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Projectendotnet\CategoryC\Client\obj\x86\Debug\Client.Client.resources
+C:\Projectendotnet\CategoryC\Client\obj\x86\Debug\Client.Properties.Resources.resources
+C:\Projectendotnet\CategoryC\Client\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Projectendotnet\CategoryC\Client\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Projectendotnet\CategoryC\Client\obj\x86\Debug\Client.exe
+C:\Projectendotnet\CategoryC\Client\obj\x86\Debug\Client.pdb

@@ -19,7 +19,11 @@ namespace Client.Handlers
         public static void HandleBroadcast(ref Client mainForm, byte[] data)
         {
             ASCIIEncoding encoding = new ASCIIEncoding();
-            mainForm.AppendMessage = encoding.GetString(data);
+            
+            //packet = SENDER|MESSAGE
+            String[] messageSplit = new String[2];
+            messageSplit = encoding.GetString(data).Split('|');
+            mainForm.AppendText(messageSplit[0] + ":" + messageSplit[1]);
         }
     }
 }
