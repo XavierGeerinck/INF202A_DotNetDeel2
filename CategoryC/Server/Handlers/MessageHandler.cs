@@ -17,11 +17,14 @@ namespace Server
         /// </summary>
         /// <param name="data"></param>
         [Opcode(ClientMessage.CMSG_BROADCAST)]
-        public static void HandleBroadcast(byte[] data)
+        public static void HandleBroadcast(ref TcpClient sender, byte[] data)
         {
             foreach (TcpClient client in ListenerSocket.Clients)
             {
-                PacketHandler.sendPacket(client, ClientMessage.SMSG_BROADCAST, data);
+                if (!client.Equals(sender))
+                {
+                    PacketHandler.sendPacket(client, ClientMessage.SMSG_BROADCAST, data);
+                }
             }
             
             //ASCIIEncoding encoding = new ASCIIEncoding();

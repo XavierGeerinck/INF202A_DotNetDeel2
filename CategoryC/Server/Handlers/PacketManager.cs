@@ -6,13 +6,14 @@ using System.Reflection;
 using System.IO;
 using Server.Opcodes;
 using Shared.Opcodes;
+using System.Net.Sockets;
 
 namespace Server.Handlers
 {
     public class PacketManager
     {
         static Dictionary<ClientMessage, HandlePacket> OpcodeHandlers = new Dictionary<ClientMessage, HandlePacket>();
-        delegate void HandlePacket(byte[] data);
+        delegate void HandlePacket(ref TcpClient sender, byte[] data);
 
         public static void DefineOpcodeHandlers()
         {
@@ -30,11 +31,11 @@ namespace Server.Handlers
             }
         }
 
-        public static bool InvokeHandler(ClientMessage opcode, byte[] data)
+        public static bool InvokeHandler(ref TcpClient sender, ClientMessage opcode, byte[] data)
         {
             if (OpcodeHandlers.ContainsKey(opcode))
             {
-                OpcodeHandlers[opcode].Invoke(data);
+                OpcodeHandlers[opcode].Invoke(ref sender, data);
                 return true;
             }
             else

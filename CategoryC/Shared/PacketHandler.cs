@@ -7,19 +7,19 @@ using Shared.Opcodes;
 
 namespace Shared
 {
-    public class PacketHandler
+    public static class PacketHandler
     {
-        public static void SendPacket(TcpClient client, ClientMessage opcode, byte[] message)
+        public static void sendPacket(TcpClient client, ClientMessage clientMessage, byte[] data)
         {
             // create the packet that will be send
-            byte[] appendedOpcode = new byte[message.Length + 1];
-            message.CopyTo(appendedOpcode, 1);
-            appendedOpcode[0] = (byte)opcode;
-            message = appendedOpcode;
+            byte[] appendedOpcode = new byte[data.Length + 1];
+            data.CopyTo(appendedOpcode, 1);
+            appendedOpcode[0] = (byte)clientMessage;
+            data = appendedOpcode;
 
             // SEND
             NetworkStream clientStream = client.GetStream();
-            clientStream.Write(message, 0, message.Count());
+            clientStream.Write(data, 0, data.Count());
             clientStream.Flush();
         }
     }

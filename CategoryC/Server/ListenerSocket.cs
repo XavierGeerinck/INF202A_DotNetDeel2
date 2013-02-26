@@ -122,7 +122,7 @@ namespace Server
                 // DEBUG.END
 
                 // Let the packetmanager invoke the correct handler
-                PacketManager.InvokeHandler(opcode.opcode, data);
+                PacketManager.InvokeHandler(ref tcpClient, opcode.opcode, data);
             }
         }
     }
