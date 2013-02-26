@@ -16,10 +16,10 @@ namespace Client.Handlers
         /// </summary>
         /// <param name="data"></param>
         [Opcode(ClientMessage.SMSG_BROADCAST)]
-        public static void HandleBroadcast(Form mainForm, byte[] data)
+        public static void HandleBroadcast(ref Client mainForm, byte[] data)
         {
             ASCIIEncoding encoding = new ASCIIEncoding();
-            //encoding.GetString(data)
+            mainForm.AppendMessage = encoding.GetString(data);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Client.Handlers
     public class PacketManager
     {
         static Dictionary<ClientMessage, HandlePacket> OpcodeHandlers = new Dictionary<ClientMessage, HandlePacket>();
-        delegate void HandlePacket(byte[] data);
+        delegate void HandlePacket(ref Client mainForm, byte[] data);
 
         public static void DefineOpcodeHandlers()
         {
@@ -31,11 +31,11 @@ namespace Client.Handlers
             }
         }
 
-        public static bool InvokeHandler(ClientMessage opcode, byte[] data)
+        public static bool InvokeHandler(ref Client mainForm, ClientMessage opcode, byte[] data)
         {
             if (OpcodeHandlers.ContainsKey(opcode))
             {
-                OpcodeHandlers[opcode].Invoke(data);
+                OpcodeHandlers[opcode].Invoke(ref mainForm, data);
                 return true;
             }
             else
