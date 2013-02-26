@@ -6,6 +6,7 @@ using Client.Opcodes;
 using Shared.Opcodes;
 using System.IO;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Client.Handlers
 {
@@ -23,7 +24,9 @@ namespace Client.Handlers
             //packet = SENDER|MESSAGE
             String[] messageSplit = new String[2];
             messageSplit = encoding.GetString(data).Split('|');
-            mainForm.AppendText(messageSplit[0] + ":" + messageSplit[1]);
+            mainForm.AppendText(messageSplit[0], Color.Red);
+            mainForm.AppendText(": " + messageSplit[1], Color.Black);
+            mainForm.AppendText("\n", Color.Black);
         }
     }
 }

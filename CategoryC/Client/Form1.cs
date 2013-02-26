@@ -19,7 +19,6 @@ namespace Client
     {
         private const int PortNumber = 8888;
         private ASCIIEncoding Encoder;
-        DateTime TimeNow;
         private ConnectionHandler connectionHandler;
 
         public Client()
@@ -65,19 +64,6 @@ namespace Client
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            if (!TimeNow.ToShortDateString().Equals(DateTime.Now.ToShortDateString()))
-            {
-                TimeNow = DateTime.Now;
-                AppendText(TimeNow.ToShortDateString() + "\n", Color.Blue);
-                AppendText(TimeNow.ToShortTimeString() + "\n", Color.Red);
-            }
-            if (!TimeNow.ToShortTimeString().Equals(DateTime.Now.ToShortTimeString()))
-            {
-                AppendText(TimeNow.ToShortTimeString() + "\n", Color.Red);
-            }
-            TimeNow = DateTime.Now;
-            txtMess.AppendText(txtSend.Text + "\n");
-
             // CREATE
             byte[] message = Encoder.GetBytes(txtName.Text + "|" + txtSend.Text);
             PacketHandler.sendPacket(connectionHandler.ServerSocket, ClientMessage.CMSG_BROADCAST, message);
@@ -92,14 +78,8 @@ namespace Client
             txtMess.SelectionColor = color;
             txtMess.AppendText(text);
             txtMess.SelectionColor = txtMess.ForeColor;
-        }
-        public void AppendText(string text) {
-          txtMess.SelectionStart = txtMess.TextLength;
-          txtMess.SelectionLength = 0;
 
-          txtMess.SelectionColor = Color.Black;
-          txtMess.AppendText(text);
-          txtMess.SelectionColor = txtMess.ForeColor;
+           
         }
     }
 }
