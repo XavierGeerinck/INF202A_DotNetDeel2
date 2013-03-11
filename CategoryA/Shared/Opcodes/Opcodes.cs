@@ -16,6 +16,7 @@ namespace Shared.Opcodes
         CMSG_LOGIN          = 0x05,
         CMSG_DISCONNECT     = 0x06,
         CMSG_LOGOUT         = 0x07,
+        LMSG_SERVERPORT     = 0x08,
     }
 
     public struct Opcode
