@@ -1,0 +1,6 @@
+C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryA\LoadBalancer\bin\Debug\LoadBalancer.exe
+C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryA\LoadBalancer\bin\Debug\LoadBalancer.pdb
+C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryA\LoadBalancer\bin\Debug\Shared.dll
+C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryA\LoadBalancer\bin\Debug\Shared.pdb
+C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryA\LoadBalancer\obj\x86\Debug\LoadBalancer.exe
+C:\Users\Xavier\Desktop\School\C#\.NET Deel 2\INF202A_DotNetDeel2\CategoryA\LoadBalancer\obj\x86\Debug\LoadBalancer.pdb
